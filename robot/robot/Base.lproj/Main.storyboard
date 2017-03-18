@@ -153,6 +153,25 @@
                                     <outletCollection property="gestureRecognizers" destination="oF1-5S-5DY" appends="YES" id="OLA-f8-laO"/>
                                 </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z34-DI-eRI">
+                                <rect key="frame" x="16" y="343.5" width="343" height="45"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="LPz-4J-CtX"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="td1-pn-ojB"/>
+                                </constraints>
+                                <state key="normal" title="发送信息">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="4"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="sendButtonAction:" destination="Edn-03-xh5" eventType="touchUpInside" id="aNw-Q0-ehv"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" clipsSubviews="YES" alpha="0.84999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入内容标题" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CIj-0k-jRi">
                                 <rect key="frame" x="63.5" y="40" width="295.5" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -224,6 +243,7 @@
                             <constraint firstItem="e9q-1G-IaG" firstAttribute="leading" secondItem="sg4-VM-u7y" secondAttribute="leading" id="5Am-76-fPb"/>
                             <constraint firstItem="e9q-1G-IaG" firstAttribute="trailing" secondItem="sg4-VM-u7y" secondAttribute="trailing" id="7jJ-AC-7ZA"/>
                             <constraint firstItem="VRc-RF-KAP" firstAttribute="leading" secondItem="c2J-Cr-BHB" secondAttribute="leading" id="9dd-88-kVC"/>
+                            <constraint firstItem="Z34-DI-eRI" firstAttribute="top" secondItem="TOQ-GG-wc4" secondAttribute="bottom" constant="25" id="AC8-Km-jdI"/>
                             <constraint firstItem="TOQ-GG-wc4" firstAttribute="leading" secondItem="e9q-1G-IaG" secondAttribute="leading" id="BfW-1x-TiU"/>
                             <constraint firstItem="CIj-0k-jRi" firstAttribute="leading" secondItem="WSm-Qf-FZK" secondAttribute="trailing" constant="8" id="DYc-d0-EMa"/>
                             <constraint firstItem="jTI-z1-dO2" firstAttribute="height" secondItem="vGu-N6-7YQ" secondAttribute="height" id="ETI-Sv-sDd"/>
@@ -233,6 +253,7 @@
                             <constraint firstItem="Dnb-Nx-vCe" firstAttribute="top" secondItem="VRc-RF-KAP" secondAttribute="bottom" id="JJD-ET-FkH"/>
                             <constraint firstItem="jTI-z1-dO2" firstAttribute="leading" secondItem="vGu-N6-7YQ" secondAttribute="leading" id="MCd-UU-qWH"/>
                             <constraint firstItem="vGu-N6-7YQ" firstAttribute="leading" secondItem="KPE-dQ-Lvt" secondAttribute="leading" id="PVA-2B-nCv"/>
+                            <constraint firstItem="Z34-DI-eRI" firstAttribute="trailing" secondItem="c2J-Cr-BHB" secondAttribute="trailingMargin" id="RZv-pW-hwb"/>
                             <constraint firstItem="WSm-Qf-FZK" firstAttribute="top" secondItem="wcu-Zw-26d" secondAttribute="bottom" constant="20" id="SWo-Ad-1PG"/>
                             <constraint firstItem="KPE-dQ-Lvt" firstAttribute="leading" secondItem="WSm-Qf-FZK" secondAttribute="leading" id="Te6-wj-i0X"/>
                             <constraint firstItem="vGu-N6-7YQ" firstAttribute="height" secondItem="WSm-Qf-FZK" secondAttribute="height" id="UV9-1w-HtC"/>
@@ -247,6 +268,7 @@
                             <constraint firstItem="KPE-dQ-Lvt" firstAttribute="top" secondItem="WSm-Qf-FZK" secondAttribute="bottom" constant="30" id="ha3-1u-pS3"/>
                             <constraint firstItem="sg4-VM-u7y" firstAttribute="top" secondItem="KPE-dQ-Lvt" secondAttribute="top" id="kTA-8U-7Mr"/>
                             <constraint firstItem="jTI-z1-dO2" firstAttribute="top" secondItem="vGu-N6-7YQ" secondAttribute="bottom" constant="30" id="naM-Jc-mV7"/>
+                            <constraint firstItem="Z34-DI-eRI" firstAttribute="leading" secondItem="c2J-Cr-BHB" secondAttribute="leadingMargin" id="pt3-04-F3S"/>
                             <constraint firstAttribute="trailing" secondItem="VRc-RF-KAP" secondAttribute="trailing" id="qdo-At-y3U"/>
                             <constraint firstItem="TOQ-GG-wc4" firstAttribute="top" secondItem="jTI-z1-dO2" secondAttribute="top" id="tYq-BK-auy"/>
                             <constraint firstAttribute="trailing" secondItem="qFZ-u1-bgI" secondAttribute="trailing" id="wcy-GD-wxP"/>
@@ -359,8 +381,6 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="sendButtonAction:" destination="Edn-03-xh5" eventType="touchUpInside" id="bIl-Fw-HxZ"/>
-                                    <action selector="sendMessage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ujv-CE-66q"/>
                                     <action selector="sendMessageAction:" destination="c7o-lO-3Fa" eventType="touchUpInside" id="oMX-24-rnP"/>
                                 </connections>
                             </button>
